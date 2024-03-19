@@ -51,8 +51,8 @@ def create(): #view function to the create property form
             db.session.add(newlisting)
             db.session.commit()
             photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            flash('This property has been successfully saved','Success')
-            return redirect(url_for('allproperties.html'))
+            flash('This property has been saved successfully','Success')
+            return redirect(url_for('property'))
     return render_template('addprop.html', form=form)
 
 def get_uploaded_image():
@@ -60,6 +60,20 @@ def get_uploaded_image():
     uploaded_images = [f for f in os.listdir(uploads_dir) if os.path.isfile(os.path.join(uploads_dir, f))]
     return uploaded_images
 
+@app.route('/uploads/<filename>')
+def get_image(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+@app.route("/properties")
+def property():
+    prope= Property.query.all()
+    return render_template('allproperties.html', prope=prope)
+
+@app.route('/properties/<propertyid>')
+def eachproperty(propertyid):
+    """Render the websites view property pages."""
+    prop = Property.query.filter_by(id=propertyid).first()
+    return render_template('eachproperty.html', prop=prop) 
 ###
 # The functions below should be applicable to all Flask apps.
 ###

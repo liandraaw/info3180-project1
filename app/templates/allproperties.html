@@ -1,13 +1,26 @@
 {%extends 'base.html'%}
 <link rel ="stylesheet" type="text/css" href="{{url_for('static', filename='css/app.css')}}">
+{% include 'flash_messages.html' %}
 
 {% block main%}
 <h1>Properties</h1>
-<div class="propcard">
-    {% for prop in properties %}
-        <div class="image-item">
-            <img src="{{ url_for('get_image', filename=i)}}" alt="{{filename}}"/>
+<div class="properties">
+    {% for property in prope %}
+        <div class = "propCard">
+            <img src ="{{ url_for('get_image', filename= property.photo) }}" alt="Property:{{ property.title }}">
+            <div class = "details">
+                <div class = "titlesection">
+                    <h3>{{ property.propertytitle }}</h3>
+                </div>
+                <div class ="locatsection">
+                    <p>{{ property.location }}</p>
+                </div>
+                <div class = "pricesection">
+                    <h4>{{ property.price }}</h4>
+                </div>
+                <a class = "viewprop" href ="{{ url_for('eachproperty', propertyid = property.id) }}">View Property</a>
+            </div>
         </div>
-    {%endfor%}
+    {% endfor %}
 </div>
 {%endblock%}

@@ -6,7 +6,7 @@ class Property(db.Model):
     
     __tablename__ = 'property'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
     propertytitle = db.Column(db.String(100))
     description = db.Column(db.String(250))
     rooms = db.Column(db.String(10))
