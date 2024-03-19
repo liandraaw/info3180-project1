@@ -6,20 +6,20 @@
     <div class = "propdetails">
         <h3>{{ prop.title }}</h3>
         <div class = "price_type">
-            <p class = "price">{{ prop.price }}</p>
-            <p class = "type">{{ prop.proptype }}</p>
+            <p class = "price">Price: {{ prop.price }}</p>
+            <p class = "type">Type: {{ prop.proptype }}</p>
         </div>
-        <p class = "description">{{ prop.description }}</p>
+        <p class = "description">Description:{{ prop.description }}</p>
         <div class = "rms">
             <div class = "bdrooms">
-                <p class = "bed">{{ prop.rooms }} Bedrooms</p>
+                <p class = "bed">Number of beds: {{ prop.rooms }} Bedrooms</p>
             </div>
             <div class = "bathrooms">
-                <p class = "bath">{{ prop.bathrooms }} Bathrooms</p>
+                <p class = "bath">Number of bathrooms: {{ prop.bathrooms }} Bathrooms</p>
             </div>
         </div>
         <div class = "address">
-            <p>{{ prop.location }}</p>
+            <p>Address: {{ prop.location }}</p>
         </div>
         <button class="btn">Email Realtor</button>
     </div>
