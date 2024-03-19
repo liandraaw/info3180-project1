@@ -32,7 +32,7 @@ def about():
 2. /properties  : list all propeties in the database
 3. /properties/<propertyid>   : viewing individual property"""
 
-@app.route('/property/create', methods =['Post']) #route to create form
+@app.route('/property/create', methods =['POST', 'GET']) #route to create form
 def create(): #view function to the create property form
     form = PropertyForm()
 

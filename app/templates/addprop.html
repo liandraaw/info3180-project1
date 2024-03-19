@@ -1,44 +1,45 @@
-{%extends 'base.html'%}
+{% extends 'base.html'%}
 {%block main%}
 <h1>Add New Property</h1>
-{%include 'flash_messages.html%}
-
-<form action="{{ url_for('properties')}}"  method="post" enctype="multipart/form-data">
+{% include 'flash_messages.html' %}
+<form action="{{ url_for('create') }}"  method="post" enctype="multipart/form-data">
     {{form.csrf_token}}
     <div class="property">
-        {{form.propertytitle(class='form-control')}}
         {{form.propertytitle.label()}}
+        {{form.propertytitle(class='form-control')}}
+        
     </div>
     <div class="property">
-        {{form.description(class='form-control')}}
         {{form.description.label()}}
+        {{form.description(class='form-control')}}
     </div>
-    <div class="property">
+    <div class="twocolums">
         <div class="rooms">
-            {{form.rooms(class='form-control')}}
             {{form.rooms.label()}}
+            {{form.rooms(class='form-control')}}
         </div>
         <div class="bathrooms">
-            {{form.bathrooms(class='form-control')}}
             {{form.bathrooms.label()}}
+            {{form.bathrooms(class='form-control')}}
         </div>
         <div class="price">
-            {{form.price(class='form-control')}}
             {{form.price.label()}}
+            {{form.price(class='form-control')}}
         </div>
         <div class="protype">
-            {{form.proptype(class='form-control')}}
             {{form.proptype.label()}}
+            {{form.proptype(class='form-control')}}
         </div>
         <div class="location">
-            {{form.location(class='form-control')}}
             {{form.location.label()}}
+            {{form.location(class='form-control')}}
         </div>
     </div>
     <div class="photo">
         {{ form.photo.label(class="form-label") }}
         {{ form.photo(class="form-control") }}
     </div>
+    <br>
         <button type="submit" name="submit" class="btn btn-primary">Add Property</button>
       
 </form>
