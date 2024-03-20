@@ -1,3 +1,108 @@
 body {
     padding-top: 5rem;
 }
+/* styling of the form */
+h1{
+    padding-bottom: 20px;
+}
+
+
+
+.add-details {
+    padding: 20px;
+}
+ 
+
+/* Styling of the list of properties */
+h4{
+    font-size: 20px;
+
+}
+.properties{
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    overflow: hidden;
+}
+.propcard{
+    box-sizing: border-box;
+    padding:5px;
+    padding-bottom:0px;
+    margin:20px;
+    border: 3px;
+    overflow:hidden;
+    width: 300px;
+    height:auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.propcard img{
+    max-width: 300px;
+    max-height: 350px;
+    object-fit: cover;  
+}
+.locatsection{
+    color: rgb(195, 192, 192);
+
+}
+.bubble{
+    color:white;
+    font-size: 15px;
+    background-color: lightseagreen;
+    padding:3px;
+    padding-bottom:0px;
+    margin:0px;
+    border-radius: 10px;  
+    display: inline-block;
+    
+}
+.bubble p{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.location{
+    color:lightslategray;
+}
+.propcard a{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #33c289;
+    height:50px;
+    width:300px;
+    color:white;
+
+}
+
+
+/* Styling of the individual properties */
+
+.prop{
+    display:grid;
+    grid-template-columns: 1fr 1.3fr;
+    grid-gap:10px;
+    max-width: 700px;
+    max-height:440px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:5%;
+    margin-bottom:10%;
+    padding-bottom:5px;
+    
+}
+
+
+
+.prop img{
+    height:100%;
+    max-width:100%;
+}
+
+.propdetails button{
+    background-color: seagreen;
+    color:white;
+
+}
